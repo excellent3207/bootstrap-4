@@ -134,7 +134,7 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 ol ol,
@@ -149,7 +149,7 @@ dt {
 }
 
 dd {
-  margin-bottom: .5rem;
+  margin-bottom: 0;
   margin-left: 0; // Undo browser default
 }
 
@@ -235,7 +235,7 @@ pre {
   // Remove browser default top margin
   margin-top: 0;
   // Reset browser default of `1em` to use `rem`s
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   // Don't allow content to break outside
   overflow: auto;
   // We have @viewport set which causes scrollbars to overlap content in IE11 and Edge, so
@@ -250,7 +250,7 @@ pre {
 
 figure {
   // Apply a consistent margin strategy (matches our type styles).
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 
