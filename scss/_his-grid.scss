@@ -1,6 +1,239 @@
-.his-list{
-  @include list-unstyled;
+//框架样式
+body{
+  user-select: none;
+  background: #eee;
 }
+.his-grid-top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  background: #1c1f2f;
+}
+.his-grid-top .his-left .his-logo{
+  height: 26px;
+  margin-left: 30px;
+}
+.his-grid-top .his-left h1{
+  margin: 0;
+  margin-left: 4px;
+  font-size: 1rem;
+  font-weight: $font-weight-normal;
+  line-height: 26px;
+  color: #bfc5e2;
+}
+.his-grid-top .his-right .his-account{
+  margin-right: 40px;
+  font-size: .875rem;
+  color: #98a5dc;
+}
+.his-grid-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  box-sizing: border-box;
+  width: 180px;
+  height: 100%;
+  color: #fff;
+  background: #1c1f2f;
+  @include transition(left .2s ease-out);
+}
+.his-grid-nav .collapse-btn{
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  width: 29px;
+  height: 35px;
+  margin-top: 17px;
+  cursor: pointer;
+}
+.his-grid-nav .his-nav-main{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 70px;
+}
+.his-grid-nav .his-collapse{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 70px;
+}
+.his-grid-nav .his-collapse .his-nav-sub{
+  display: none;
+}
+.his-grid-nav .his-collapse .his-text::after{
+  display: block;
+  clear: both;
+  content: "";
+}
+.his-grid-nav .his-collapse .his-text{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 70px;
+}
+.his-grid-nav .his-collapse > .his-main-cur > .his-text::after{
+  position: absolute;
+  top: 0;
+  left: 120px;
+  display: block;
+  width: 4px;
+  height: 100%;
+  content: "";
+  background: #a44744;
+}
+.his-grid-nav .his-collapse .his-text span{
+  display: none;
+}
+.his-grid-nav .his-collapse .his-text img{
+  margin-right: 20px;
+}
+.his-grid-nav .his-main-cur{
+  background: #2a3046;
+}
+.his-grid-nav .his-text img{
+  width: 20px;
+  margin-left: 20px;
+  opacity: .5;
+}
+.his-grid-nav .his-text span{
+  margin-left: 12px;
+  opacity: .5;
+}
+.his-grid-nav .his-nav-main > li .his-nav-sub{
+  //display: none;
+}
+.his-grid-nav .his-nav-main .his-nav-sub li:last-child{
+  padding-bottom: 10px;
+}
+.his-grid-nav .his-nav-main > li > .his-text{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.his-grid-nav .his-nav-main > .his-main-cur > .his-text::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 4px;
+  height: 100%;
+  content: "";
+  background: #a44744;
+}
+.his-nav-main > .his-main-cur > .his-text span,
+.his-nav-main > .his-main-cur > .his-text img,
+.his-nav-main > .his-main-cur .his-nav-sub span{
+  opacity: 1;
+}
+.his-grid-nav .his-nav-sub > li{
+  font-size: .875rem;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+}
+.his-grid-nav .his-nav-sub > li span{
+  display: inline-block;
+  width: 140px;
+  height: 36px;
+  text-align: center;
+  border-radius: 40px;
+  opacity: .5;
+}
+.his-grid-nav .his-nav-sub .his-sub-cur span{
+  background: #334075;
+  opacity: 1;
+}
+.his-grid-con{
+  padding: 70px 0 0 180px;
+}
+.his-grid-con .his-con{
+  margin: 20px 20px 30px;
+  background: #fff;
+}
+.his-triangle{
+  position: relative;
+  top: -9px;
+  left: 100px;
+}
+.his-triangle::after{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  margin: 0 0 -11px 0;
+  content: "";
+  border: 11px solid transparent;
+  border-top: 0;
+  border-bottom-color: #d08481;
+}
+.his-triangle::before{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 2;
+  margin: 0 0 -11px 3px;
+  content: "";
+  border: 8px solid transparent;
+  border-top: 0;
+  border-bottom-color: #fff;
+}
+.his-line{
+  height: 2px;
+  background: #d08481;
+  border: none;
+}
+.his-con-nav ul{
+  padding: 23px 0 21px;
+}
+.his-con-nav ul li:first-child{
+  margin-left: 50px;
+}
+.his-con-nav ul li{
+  position: relative;
+  float: left;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.his-con-nav ul li .his-triangle{
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  display: none;
+  margin-left: -9px;
+}
+.his-con-nav ul .cur span{
+  background: #a44744;
+}
+.his-con-nav ul .cur .his-triangle{
+  display: inline-block;
+}
+.his-con-nav li span{
+  display: inline-block;
+  padding: 0 26px;
+  font-size: 16px;
+  line-height: 42px;
+  color: #fff;
+  background: #6a76a6;
+  border-radius: 42px;
+}
+
+//下拉框样式
 .btn-select{
   padding: 8px 15px;
   font-size: 14px;
@@ -14,21 +247,27 @@
   outline: none;
   box-shadow: none;
 }
+
+//日历样式
 .his-datepicker{
   position: relative;
   box-sizing: border-box;
   display: inline-block;
+  cursor: pointer;
+  background: $lightblue;
   border: none;
+  border-radius: 30px;
 }
 .his-datepicker input{
+  position: relative;
+  z-index: 1;
   padding: 8px 15px;
   font-size: 14px;
   line-height: 14px;
   color: #333;
   cursor: pointer;
-  background: $lightblue;
+  background: none;
   border: none;
-  border-radius: 30px;
   box-shadow: none;
 }
 .his-datepicker::after{
@@ -47,6 +286,7 @@
   box-shadow: none;
 }
 
+//按钮样式
 .his-btn{
   padding: 8px 15px;
   font-size: 14px;
@@ -61,6 +301,7 @@
   box-shadow: none;
 }
 
+//input text样式
 .his-input{
   padding: 0 15px;
   font-size: 14px;
@@ -74,6 +315,8 @@
   outline: none;
   box-shadow: none;
 }
+
+//textarea样式
 .his-textarea{
   padding: 10px 15px;
   overflow: hidden;
@@ -89,4 +332,221 @@
 .his-textarea:focus{
   outline: none;
   box-shadow: none;
+}
+
+//confirm确认框
+
+.his-confirm{
+  position: relative;
+  padding: 25px 20px 40px;
+  font-size: 16px;
+}
+.his-confirm .his-cancel{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  background: #c7c7c7;
+  border-radius: 28px;
+}
+.his-confirm .his-cancel img{
+  display: block;
+  width: 12px;
+  margin: 0 auto;
+  margin-top: 8px;
+}
+.his-confirm .his-title{
+  padding-left: 6px;
+  line-height: 20px;
+  color: #334075;
+  border-left: 3px solid #a44744;
+}
+.his-confirm .his-info{
+  padding: 30px 0;
+  line-height: 20px;
+  color: #666;
+  text-align: center;
+}
+.his-confirm .his-buttons{
+  text-align: center;
+}
+.his-confirm .his-buttons .his-btn{
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+}
+.his-confirm .his-buttons .his-btn.his-btn-confirm{
+  background: #a44744;
+}
+.his-confirm .his-buttons .his-btn:not(:first-child){
+  margin-left: 30px;
+}
+
+//右侧弹出框
+
+.his-modal-right{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 8;
+  box-sizing: border-box;
+  width: 580px;
+  height: 100%;
+  padding: 100px 0 0 20px;
+  background: #fff;
+  box-shadow: -1px 0 3px 0 rgba(6, 0, 1, .2);
+  @include transition(right .3s ease-out);
+}
+.his-modal-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+}
+.his-modal-right.his-hide{
+  right: -580px;
+}
+.his-modal-right.his-show{
+  right: 0;
+}
+.his-modal-right h5{
+  padding-left: 6px;
+  font-size: 16px;
+  font-weight: $font-weight-normal;
+  line-height: 20px;
+  color: #334075;
+  border-left: 3px $font-weight-normal #a44744;
+}
+.his-modal-right .his-line{
+  height: 1px;
+  margin-top: 20px;
+  background: #eee;
+}
+.his-modal-right .his-title{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 14px;
+}
+.his-modal-right .his-title button:not(:first-child){
+  margin-left: 30px;
+}
+.his-modal-right .his-title .his-btn{
+  padding: 0 15px;
+  line-height: 30px;
+  color: #333;
+  background: #f2f8ff;
+  border-radius: 4px;
+}
+.his-modal-right .his-title .his-btn.cur{
+  color: #fff;
+  background: #a44744;
+}
+.his-form-group label{
+  position: relative;
+  width: 90px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 36px;
+  color: #666;
+}
+.his-form-group.his-form-text{
+  margin-top: 20px;
+}
+.his-form-group.his-form-text label{
+  margin-bottom: 0;
+  line-height: 14px;
+}
+.his-form-group label:not(:first-child){
+  margin-left: 20px;
+}
+.his-required::after{
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  margin-top: -5px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #a44744;
+  content: "*";
+}
+.his-modal-right .his-form-group{
+  margin-top: 16px;
+}
+.his-modal-right .his-form-group input{
+  width: 180px;
+  height: 36px;
+}
+.his-modal-right .his-form-group .btn-select{
+  height: 36px;
+  padding: 11px 15px;
+  border-radius: 4px;
+}
+.his-modal-right .his-form-group .his-datepicker{
+  border-radius: 4px;
+}
+.his-modal-right .his-textarea{
+  width: 436px;
+  height: 36px;
+}
+.his-form-group .his-pure-text{
+  display: inline-block;
+  width: 150px;
+  padding-left: 15px;
+  font-size: 14px;
+  color: #333;
+}
+.his-form-buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.his-form-buttons button:not(:first-child){
+  margin-left: 40px;
+}
+.his-form-buttons .his-btn{
+  width: 120px;
+  padding: 13px 15px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 40px;
+}
+.his-form-buttons .his-btn.register{
+  background: #a44744;
+}
+
+//分页
+.his-pages{
+  padding: 40px 30px 24px;
+}
+.his-pages .his-total{
+  font-size: 14px;
+  line-height: 32px;
+  color: #333;
+}
+.his-pages .his-page li{
+  float: left;
+  padding: 0 11px;
+  margin-left: 10px;
+  line-height: 32px;
+  color: #666;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+}
+.his-pages .his-page .his-page-num.cur{
+  color: #fff;
+  background: #6a76a6;
+}
+.his-pages .his-page .his-page-first,
+.his-pages .his-page .his-page-last{
+  padding: 0 8px;
+}
+.his-pages .his-page li img{
+  width: 12px;
 }
