@@ -385,7 +385,6 @@ body{
 }
 
 //右侧弹出框
-
 .his-modal-right{
   position: fixed;
   top: 0;
@@ -394,7 +393,7 @@ body{
   box-sizing: border-box;
   width: 580px;
   height: 100%;
-  padding: 100px 0 0 20px;
+  padding-top: 70px;
   background: #fff;
   box-shadow: -1px 0 3px 0 rgba(6, 0, 1, .2);
   @include transition(right .3s ease-out);
@@ -413,6 +412,7 @@ body{
 .his-modal-right.his-show{
   right: 0;
 }
+//右侧弹窗 内容（预约挂号）
 .his-modal-right h5{
   padding-left: 6px;
   font-size: 16px;
